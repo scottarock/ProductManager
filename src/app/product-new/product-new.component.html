@@ -1,3 +1,39 @@
-<p>
-  product-new works!
-</p>
+<div class="component">
+  <fieldset>
+    <legend>Create a New Product</legend>
+    <form (submit)="onSubmit()" #form="ngForm">
+      <div>
+        <label for="title">Title</label>
+        <input
+          name="title"
+          type="text"
+          required
+          minlength="4"
+          [(ngModel)]="product.title"
+          #title="ngModel"
+        >
+      </div>
+      <div>
+        <label for="price">Price</label>
+        <input
+          name="price"
+          type="number"
+          step=".01"
+          required
+          [(ngModel)]="product.price"
+          #price="ngModel"
+        >
+      </div>
+      <div>
+        <label for="imageUrl">Image URL</label>
+        <input
+          name="imageUrl"
+          type="text"
+          [(ngModel)]="product.imageUrl"
+          #imageUrl="ngModel"
+        >
+      </div>
+      <button [disabled]="form.invalid">Create</button>
+    </form>
+  </fieldset>
+</div>

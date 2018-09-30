@@ -1,0 +1,22 @@
+.wrapper {
+  width: 90%;
+  margin: 20px auto;
+}
+
+nav {
+  margin-bottom: 5px;
+  padding: 4px 0px;
+  text-align: center;
+  background-color: lightsteelblue;
+}
+
+nav a {
+  padding: 2px 8px;
+  text-decoration: none;
+  color: navy;
+  border-right: 1px solid navy;
+}
+
+nav a:last-child {
+  border-right: 0px;
+}
