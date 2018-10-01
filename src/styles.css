@@ -6,6 +6,7 @@
 
 .component {
   padding: 25px;
+  text-align: center;
   border: 1px solid gray;
   border-radius: 3px;
 }

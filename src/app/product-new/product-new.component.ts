@@ -18,8 +18,8 @@ export class ProductNewComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.product);
-    this.productService.addProduct(this.product);
+    this.productService.addProduct(this.product)
+      .subscribe( _result => {});
     this.product = new Product;
   }
 

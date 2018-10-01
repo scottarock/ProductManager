@@ -21,4 +21,14 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  onDelete(product: Product): void {
+    this.productService.removeProduct(product.id)
+      .subscribe( _result => {
+        this.productService.getProductList()
+          .subscribe( productList => {
+            this.products = productList;
+        });
+    });
+  }
+
 }
