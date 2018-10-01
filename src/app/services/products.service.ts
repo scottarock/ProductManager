@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { Product } from '../models';
 
@@ -12,10 +13,11 @@ export class ProductsService {
 
   constructor(private http: HttpClient) { }
 
-  addProduct(product: Product) {
-    this.http.post(this.base, product)
-      .subscribe( createdProduct => {
-        console.log(createdProduct);
-    });
+  addProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.base, product)
+  }
+
+  getProductList(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.base);
   }
 }

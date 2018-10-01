@@ -1,0 +1,36 @@
+.product {
+  display: inline-block;
+  width: 45%;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  display: block;
+  box-sizing: border-box;
+  width: 90%;
+  margin: 5px auto 0px;
+  padding: 4px 8px;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: 1px solid gray;
+  border-radius: 2px;
+}
+
+.btn-edit {
+  background-color: orange;
+}
+
+.btn-delete {
+  color: whitesmoke;
+  background-color: red;
+}

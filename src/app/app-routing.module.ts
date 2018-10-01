@@ -24,7 +24,6 @@ const routes: Routes = [
   },
   {
     path: 'products/edit/:id',
-    pathMatch: 'full',
     component: ProductEditComponent,
   }
 ];
