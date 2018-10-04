@@ -1,5 +1,6 @@
 .product {
   display: inline-block;
+  vertical-align: top;
   width: 45%;
   margin: 1%;
   padding: 1%;

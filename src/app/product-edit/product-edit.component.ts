@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { ProductsService } from '../services';
 import { Product } from '../models';
@@ -16,7 +17,8 @@ export class ProductEditComponent implements OnInit {
 
   constructor(
     private productService: ProductsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.route.paramMap
       .subscribe( params => {
@@ -34,13 +36,15 @@ export class ProductEditComponent implements OnInit {
   onSubmit(): void {
     this.productService.updateProduct(this.product)
       .subscribe( _result => {
-        console.log(_result);
+        this.router.navigateByUrl('/products');
     });
   }
 
   onDelete(): void {
     this.productService.removeProduct(this.product.id)
-      .subscribe( _result => {});
+      .subscribe( _result => {
+        this.router.navigateByUrl('/products');
+    });
   }
 
 }
